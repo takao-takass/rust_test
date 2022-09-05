@@ -5,6 +5,15 @@ use std::io;
 fn main() {
 
 
+    let neko = String::from("NECO-CHAN!");
+
+    // let neko = "WANCO-CHAN!";
+
+    let res = slice(&neko);
+
+    println!("This is a {}", res);
+
+
     println!("Guess the number!");
 
     let secret_number = rand::thread_rng().gen_range(1..101);
@@ -41,4 +50,8 @@ fn main() {
         }
     }
 
+}
+
+fn slice(s: &str) -> &str {
+    &s[..3]
 }
