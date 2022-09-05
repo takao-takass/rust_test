@@ -4,6 +4,21 @@ use std::io;
 
 fn main() {
 
+    let inu = Animal {
+        name: String::from("INU"),
+        voice: String::from("WAN"),
+        heavy: 32,
+        hight: 109,
+    };
+
+
+    let inu_wan = Animal {
+        name: String::from("INU-WAN"),
+        hight: 129,
+        ..inu
+    };
+
+    println!("Next! {}!! {}!!", inu_wan.name, inu_wan.voice);
 
     let neko = String::from("NECO-CHAN!");
 
@@ -54,4 +69,11 @@ fn main() {
 
 fn slice(s: &str) -> &str {
     &s[..3]
+}
+
+struct Animal {
+    name: String,
+    hight: u32,
+    heavy: u32,
+    voice: String,
 }
