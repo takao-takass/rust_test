@@ -2,7 +2,34 @@ use rand::Rng;
 use std::cmp::Ordering;
 use std::io;
 
+struct Monster {
+    name: String,
+    heavy: u32,
+}
+
+impl Monster {
+    fn greet(&self) -> String {
+        "私の名前は！".to_string() + &self.name
+    }
+    fn greeth(&self) -> String {
+        "体重は".to_string() + &self.heavy.to_string()
+    }
+    fn mutation_heavy(&self, mutation: u32) -> u32 {
+        &self.heavy * mutation
+    }
+}
+
 fn main() {
+
+    let jelly: Monster = Monster { 
+        name: String::from("aaaa"), 
+        heavy: 55
+    };
+
+    println!("{}", jelly.greet());
+    println!("{}", jelly.greeth());
+    println!("{}", jelly.mutation_heavy(6).to_string());
+
 
     let inu = Animal {
         name: String::from("INU"),
